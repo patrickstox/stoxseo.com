@@ -61,6 +61,7 @@ const Navbar = styled.div`
   width: 100%;
   height: 5rem;
   background: ${Theme.colors.primary};
+  box-shadow: 0 3px 0 ${Theme.colors.primaryDark}, 0 0 15px rgba(0, 0, 0, 0.4);
 
   .contain {
     max-width: 1000px;
@@ -73,6 +74,7 @@ const Navbar = styled.div`
   .logo {
     padding: 0.5rem 1rem;
     .name {
+      display: block;
       font-size: 1.8rem;
       color: white;
       font-weight: bold;
@@ -90,6 +92,7 @@ const Navbar = styled.div`
   nav {
     width: 100%;
     text-align: right;
+    margin-right: 1rem;
 
     a {
       color: white;
@@ -102,6 +105,9 @@ const Navbar = styled.div`
         opacity: 1;
       }
     }
+    @media (max-width: 600px) {
+      font-size: 0.9rem;
+    }
   }
 `
 
@@ -111,7 +117,9 @@ export default getSiteProps(({ siteTitle, siteByline }) => (
       <Navbar>
         <div className="contain">
           <div className="logo">
-            <div className="name">{siteTitle}</div>
+            <Link to="/" className="name">
+              {siteTitle}
+            </Link>
             <div className="byline">{siteByline}</div>
           </div>
           <nav>
