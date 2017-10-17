@@ -94,17 +94,23 @@ const Navbar = styled.div`
     text-align: right;
     margin-right: 1rem;
 
+    :hover {
+      a {
+        opacity: 0.8;
+      }
+    }
+
     a {
       color: white;
-      opacity: 0.8;
       padding: 0.2rem 0.5rem;
       display: inline-block;
+      transition: all 0.2s ease;
 
-      :hover,
-      &.active {
+      :hover {
         opacity: 1;
       }
     }
+
     @media (max-width: 600px) {
       font-size: 0.9rem;
     }
